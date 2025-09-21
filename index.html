@@ -9,12 +9,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* --- Тёмный glass / neon --- */
     :root{
       --bg-1: #06060a;
       --bg-2: #0b1020;
-      --neon-1: #a855f7; /* purple */
-      --neon-2: #6366f1; /* button second stop (approx) */
+      --neon-1: #a855f7;
+      --neon-2: #6366f1;
       --neon-1-rgba: rgba(168,85,247,0.95);
       --neon-2-rgba: rgba(99,102,241,0.9);
       --neon-glow: rgba(168,85,247,0.08);
@@ -40,7 +39,6 @@
     .h-scroll { height: 100vh; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
     .panel { scroll-snap-align: start; min-width: 100vw; height: 100vh; flex: 0 0 100vw; }
 
-    /* Logo circle — neon rim */
     .logo-circle {
       width: min(72vh, 80vw);
       height: min(72vh, 80vw);
@@ -65,18 +63,17 @@
     }
     .logo-circle:hover { transform: translateY(-8px) scale(1.04); box-shadow: 0 20px 80px rgba(168,85,247,0.14), 0 0 60px rgba(6,182,212,0.06) inset; }
 
-    /* NEW: avatar frame matching CTA gradient */
     .avatar-frame {
-      width: calc(100% - 28px); /* рамка внутри круга, отступ чтобы был виден rim */
+      width: calc(100% - 28px);
       height: calc(100% - 28px);
       border-radius: 9999px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px; /* немного внутреннего отступа, чтобы создать ring */
+      padding: 6px;
       background: linear-gradient(90deg, var(--neon-1-rgba), var(--neon-2-rgba));
       box-shadow: 0 16px 50px var(--neon-glow), inset 0 4px 30px rgba(99,102,241,0.06);
-      -webkit-mask: linear-gradient(#000, #000); /* to ensure clipping in some browsers */
+      -webkit-mask: linear-gradient(#000, #000);
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
     .logo-circle:hover .avatar-frame { transform: translateY(-6px) scale(1.01); box-shadow: 0 32px 80px rgba(168,85,247,0.12), inset 0 6px 40px rgba(99,102,241,0.08); }
@@ -87,7 +84,7 @@
       object-fit: cover;
       border-radius: 9999px;
       display:block;
-      border: 2px solid rgba(0,0,0,0.18); /* тонкая тёмная граница чтобы отделить изображение от яркого ring */
+      border: 2px solid rgba(0,0,0,0.18);
       box-shadow: 0 10px 30px rgba(0,0,0,0.45);
       background-color: #0a0a0a;
     }
@@ -106,7 +103,6 @@
     }
     .mini-badge:hover { transform: translateY(-4px) rotate(6deg); box-shadow: 0 18px 40px rgba(168,85,247,0.14); }
 
-    /* Glass cards — dark */
     .glass-card {
       background: var(--glass);
       border: 1px solid var(--glass-border);
@@ -117,12 +113,10 @@
     }
     .glass-card:hover { transform: translateY(-6px); box-shadow: 0 28px 80px rgba(6,12,35,0.6); }
 
-    /* Headings */
     h1,h2,h3{ margin:0; letter-spacing:-0.4px; color:var(--text-soft); text-shadow: 0 4px 24px rgba(0,0,0,0.6); }
     h1 { font-weight:800; }
     p, li, a { color: #cdd6ff; }
 
-    /* Neon CTA */
     .cta-button {
       background: linear-gradient(90deg, rgba(168,85,247,0.95), rgba(99,102,241,0.9));
       color: #fff;
@@ -149,7 +143,6 @@
     }
     .bookmark-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(6,12,35,0.6); }
 
-    /* Bookmark toast */
     .bookmark-toast {
       position: fixed; left:50%; transform: translateX(-50%) translateY(8px); bottom: 28px;
       background: linear-gradient(180deg, rgba(10,10,14,0.9), rgba(6,6,10,0.92));
@@ -162,7 +155,6 @@
     }
     .bookmark-toast.show { opacity:1; pointer-events:auto; transform: translateX(-50%) translateY(0); }
 
-    /* iOS modal — dark card */
     .ios-modal {
       position: fixed; left:50%; top:50%; transform: translate(-50%,-50%) scale(0.98);
       width: min(92vw, 420px);
@@ -196,35 +188,25 @@
       <div class="container mx-auto px-8 flex items-center gap-12 w-full max-w-6xl">
         <div class="flex-shrink-0 flex items-center justify-center">
           <div class="logo-circle rounded-full">
-            <!-- Добавлена обёртка avatar-frame, которая создаёт градиентный rim как у кнопки "Написать" -->
             <div class="avatar-frame" aria-hidden="true">
-              
               <img src="https://hooks.pro/media/2025/08/26/bot7634233960/photos/HFVD/file_7.jpg" alt="Аватар" class="avatar-img">
-              
             </div>
           </div>
         </div>
-
         <div class="flex-1 flex flex-col justify-center items-start md:items-start">
           <div class="w-full flex items-center gap-6">
             <div class="text-left md:text-left">
               <h1 class="text-5xl md:text-6xl font-extrabold leading-tight" style="text-shadow: 0 8px 40px #a855f72e;">Ti</h1>
               <p class="text-sm md:text-lg" style="color: #c9d4ff; margin-top:6px;">Создаю современные концепты и мерч</p>
             </div>
-
             <div class="ml-auto hidden md:block">
               <div class="mini-badge" role="button" title="Перейти">
-                
                 <img src="https://hooks.pro/media/2025/08/26/bot7634233960/photos/HFVD/file_7.jpg" alt="badge" class="w-9 h-9 object-contain rounded-full">
-                
               </div>
             </div>
           </div>
-
           <div class="cta-wrap mt-8 md:mt-10 flex items-center gap-3">
             <a id="writeBtn" href="https://t.me/ts31415" class="cta-button" aria-label="Написать">🚀 Написать</a>
-
-            <!-- bookmark / install button -->
             <button id="bookmarkBtn" class="bookmark-button" aria-label="Добавить в закладки" title="Добавить в закладки">🪐 Добавить</button>
           </div>
         </div>
@@ -238,86 +220,46 @@
           <div id="about" class="glass-card p-6">
             <h2 class="text-3xl font-semibold pb-2">Bio</h2>
             <ul class="mt-4 list-disc list-inside space-y-2" style="color:#cdd6ff;">
-              
               <li>От идеи до реализации: стратегия → дизайн → продакшн → дистрибуция</li>
-              
               <li>3 года в стоматологии → хирургии</li>
-              
               <li>За все время - HR, сервисный специалист, топ-менеджер → ивент-менеджер, модель, проект-менеджер.</li>
-              
               <li>Полюбил новое, потому что пугало старое и в целом неплохая инвестиция.</li>
-              
             </ul>
           </div>
-
           <div id="cases" class="glass-card p-6">
             <h2 class="text-3xl font-semibold pb-2">Кейсы</h2>
             <div class="grid md:grid-cols-2 gap-4 mt-4">
-              
-                
-                <a href="https://t.me/dg31415" class="block p-4 glass-card hover:scale-[1.02] transition">
-                  <h3 class="font-bold">письма из бутылки</h3>
-                  <p class="text-sm" style="color:#bfcfff;">Творческий непроект</p>
-                </a>
-                
-              
-                
-                <a href="https://t.me/token_EYE_ID" class="block p-4 glass-card hover:scale-[1.02] transition">
-                  <h3 class="font-bold" style="color:#70cbff;">EYE-ID</h3>
-                  <p class="text-sm" style="color:#e0e8ff;">Целый мир в одно касание. Персональный мультипрофиль - 
-                    для Артистов, Блогеров и Нетворкинга. 
-                    Твой цифровой токен.</p>
-                </a>
-                
-              
-                
-                <a href="https://t.me/NotUnderground" class="block p-4 glass-card hover:scale-[1.02] transition">
-                  <h3 class="font-bold">Not Underground</h3>
-                  <p class="text-sm" style="color:#bfcfff;">Промо-семья - Наши ивенты тут, приходи)</p>
-                </a>
-                
-              
-                
-                <a href="https://t.me/SYMME3" class="block p-4 glass-card hover:scale-[1.02] transition">
-                  <h3 class="font-bold">SYM|MET.RY</h3>
-                  <p class="text-sm" style="color:#bfcfff;">Научно-познавательный проект. (в процессе подготовки к публикации)</p>
-                </a>
-                
-              
+              <a href="https://t.me/dg31415" class="block p-4 glass-card hover:scale-[1.02] transition">
+                <h3 class="font-bold">письма из бутылки</h3>
+                <p class="text-sm" style="color:#bfcfff;">Творческий непроект</p>
+              </a>
+              <a href="https://t.me/token_EYE_ID" class="block p-4 glass-card hover:scale-[1.02] transition">
+                <h3 class="font-bold" style="color:#70cbff;">EYE-ID</h3>
+                <p class="text-sm" style="color:#e0e8ff;">Целый мир в одно касание. Персональный мультипрофиль - 
+                  для Артистов, Блогеров и Нетворкинга. 
+                  Твой цифровой токен.</p>
+              </a>
+              <a href="https://t.me/NotUnderground" class="block p-4 glass-card hover:scale-[1.02] transition">
+                <h3 class="font-bold">Not Underground</h3>
+                <p class="text-sm" style="color:#bfcfff;">Промо-семья - Наши ивенты тут, приходи)</p>
+              </a>
+              <a href="https://t.me/SYMME3" class="block p-4 glass-card hover:scale-[1.02] transition">
+                <h3 class="font-bold">SYM|MET.RY</h3>
+                <p class="text-sm" style="color:#bfcfff;">Научно-познавательный проект. (в процессе подготовки к публикации)</p>
+              </a>
             </div>
           </div>
-
           <div id="contacts" class="glass-card p-6">
             <h2 class="text-3xl font-semibold pb-2">Контакты</h2>
             <div class="mt-4 flex flex-col gap-3" style="color:#c9d4ff;">
-              
-                
-                <a href="tel:+79777637537" class="block px-4 py-2 glass-card hover:scale-105 transition">📞 +7 (999) 000-00-00</a>
-                
-              
-                
-                <a href="https://t.me/ts31415" class="block px-4 py-2 glass-card hover:scale-105 transition">📱 Telegram</a>
-                
-              
-                
-                <a href="mailto:first.guest.ghost@gmail.com" class="block px-4 py-2 glass-card hover:scale-105 transition">✉️ first.guest.ghost</a>
-                
-              
-                
-                <a href="https://www.instagram.com/teneb1415/" class="block px-4 py-2 glass-card hover:scale-105 transition">📸 Instagram</a>
-                
-              
-                
-                <a href="https://vk.com/ts31415" class="block px-4 py-2 glass-card hover:scale-105 transition">🦾 VK</a>
-                
-              
-                
-                <div class="block px-4 py-2 glass-card">🎧 SoundCloud</div>
-                
-              
+              <a href="tel:+79777637537" class="block px-4 py-2 glass-card hover:scale-105 transition">📞 +7 (999) 000-00-00</a>
+              <a href="https://t.me/ts31415" class="block px-4 py-2 glass-card hover:scale-105 transition">📱 Telegram</a>
+              <a href="mailto:first.guest.ghost@gmail.com" class="block px-4 py-2 glass-card hover:scale-105 transition">✉️ first.guest.ghost</a>
+              <a href="https://www.instagram.com/teneb1415/" class="block px-4 py-2 glass-card hover:scale-105 transition">📸 Instagram</a>
+              <a href="https://vk.com/ts31415" class="block px-4 py-2 glass-card hover:scale-105 transition">🦾 VK</a>
+              <div class="block px-4 py-2 glass-card">🎧 SoundCloud</div>
             </div>
           </div>
-
           <footer class="text-sm text-neutral-400 mt-auto text-center"><div>📍 Москва • ⏱ UTC+3 • © tenebris</div></footer>
         </div>
       </div>
@@ -342,9 +284,7 @@
   </div>
 
   <script>
-    /* ------------------------------
-       1) Автоматическая установка manifest (динамически) — чтобы не просить дополнительно файл
-       ------------------------------ */
+    // 1) Автоматическая установка manifest (динамически)
     (function createManifest() {
       try {
         const manifest = {
@@ -364,20 +304,16 @@
         link.rel = 'manifest';
         link.href = manifestURL;
         document.head.appendChild(link);
-        // освобождение URL не делаем сразу — пока используется
       } catch (err) {
         console.warn('manifest create error', err);
       }
     })();
 
-    /* ------------------------------
-       2) Подключаем (минимальный) service worker через blob — для PWA-условий (нужен HTTPS)
-       ------------------------------ */
+    // 2) Минимальный service worker через blob — для PWA (HTTPS)
     (async function registerSW() {
       if ('serviceWorker' in navigator) {
         try {
           const swCode = `
-            // Простой service worker — кэширует shell (very basic)
             const CACHE = 'mrtest-v1';
             self.addEventListener('install', e => {
               self.skipWaiting();
@@ -404,9 +340,7 @@
       }
     })();
 
-    /* ------------------------------
-       3) Логика для beforeinstallprompt (Chrome/Android)
-       ------------------------------ */
+    // 3) Логика для beforeinstallprompt (Chrome/Android)
     (function handleInstallPrompt() {
       let deferredPrompt = null;
       const btn = document.getElementById('bookmarkBtn');
@@ -421,7 +355,6 @@
         toast._t = setTimeout(() => toast.classList.remove('show'), ms);
       }
 
-      // детект iOS Safari
       function isIos() {
         return /iphone|ipad|ipod/i.test(navigator.userAgent) && /safari/i.test(navigator.userAgent);
       }
@@ -430,18 +363,14 @@
       }
 
       window.addEventListener('beforeinstallprompt', (e) => {
-        // предотвращаем автоматический показ нативного диалога
         e.preventDefault();
         deferredPrompt = e;
-        // обновим текст кнопки, чтобы показать установку PWA
         btn.textContent = '➕ Добавить на главный экран';
         btn.title = 'Добавить на главный экран (установить)';
       });
 
-      // клик по кнопке
       btn.addEventListener('click', async (ev) => {
         ev.preventDefault();
-        // Если доступен beforeinstallprompt -> инициируем нативный диалог (Chrome/Edge/Android)
         if (deferredPrompt) {
           try {
             deferredPrompt.prompt();
@@ -458,22 +387,15 @@
           }
           return;
         }
-
-        // Если уже PWA/standalone — подсказка
         if (isStandalone()) {
           showToast('Приложение уже установлено.');
           return;
         }
-
-        // iOS Safari — показываем модал с шагами
         if (isIos()) {
           iosModal.classList.add('show');
           iosModal.setAttribute('aria-hidden', 'false');
           return;
         }
-
-        // Для Android/Chromium если beforeinstallprompt недоступен (может быть из-за условий),
-        // показываем подсказку: используйте меню браузера -> "Добавить на главный экран" / Ctrl+D
         const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
         const shortcut = isMac ? '⌘+D' : 'Ctrl+D';
         showToast('Используйте меню браузера → «Добавить на главный экран» или нажмите ' + shortcut + ' для закладки.');
@@ -483,14 +405,9 @@
         iosModal.classList.remove('show');
         iosModal.setAttribute('aria-hidden', 'true');
       });
-
-      // если пользователь открыл страницу на Android, но beforeinstallprompt ещё не вызывался,
-      // можем предложить кнопку «Добавить» — кнопка уже есть.
     })();
 
-    /* ------------------------------
-       4) Обработка ссылок: target="_blank" для внешних, исключая tel: mailto: # (как ранее)
-       ------------------------------ */
+    // 4) Все внешние ссылки — target="_blank", tel/mailto/# — нет
     (function setExternalTargets() {
       const anchors = document.querySelectorAll('a[href]');
       anchors.forEach(a => {
@@ -507,9 +424,7 @@
       });
     })();
 
-    /* ------------------------------
-       5) Навигация стрелками и мини-бейдж (как раньше)
-       ------------------------------ */
+    // 5) Навигация стрелками и клик по mini-badge
     (function navShortcuts() {
       const container = document.querySelector('.h-scroll');
       window.addEventListener('keydown', (e) => {
